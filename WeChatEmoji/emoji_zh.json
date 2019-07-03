@@ -1,0 +1,681 @@
+[
+    {
+        "name": "微笑",
+        "zh_code": "[微笑]",
+        "wx_code": "/::)",
+        "imageName": "Expression_1"
+    },
+    {
+        "name": "撇嘴",
+        "zh_code": "[撇嘴]",
+        "wx_code": "/::~",
+        "imageName": "Expression_2"
+    },
+    {
+        "name": "色",
+        "zh_code": "[色]",
+        "wx_code": "/::B",
+        "imageName": "Expression_3"
+    },
+    {
+        "name": "发呆",
+        "zh_code": "[发呆]",
+        "wx_code": "/::|",
+        "imageName": "Expression_4"
+    },
+    {
+        "name": "得意",
+        "zh_code": "[得意]",
+        "wx_code": "/:8-)",
+        "imageName": "Expression_5"
+    },
+    {
+        "name": "流泪",
+        "zh_code": "[流泪]",
+        "wx_code": "/::<",
+        "imageName": "Expression_6"
+    },
+    {
+        "name": "害羞",
+        "zh_code": "[害羞]",
+        "wx_code": "/::$",
+        "imageName": "Expression_7"
+    },
+    {
+        "name": "闭嘴",
+        "zh_code": "[闭嘴]",
+        "wx_code": "/::X",
+        "imageName": "Expression_8"
+    },
+    {
+        "name": "睡",
+        "zh_code": "[睡]",
+        "wx_code": "/::Z",
+        "imageName": "Expression_9"
+    },
+    {
+        "name": "大哭",
+        "zh_code": "[大哭]",
+        "wx_code": "/::'(",
+        "imageName": "Expression_10"
+    },
+    {
+        "name": "尴尬",
+        "zh_code": "[尴尬]",
+        "wx_code": "/::-|",
+        "imageName": "Expression_11"
+    },
+    {
+        "name": "发怒",
+        "zh_code": "[发怒]",
+        "wx_code": "/::@",
+        "imageName": "Expression_12"
+    },
+    {
+        "name": "调皮",
+        "zh_code": "[调皮]",
+        "wx_code": "/::P",
+        "imageName": "Expression_13"
+    },
+    {
+        "name": "呲牙",
+        "zh_code": "[呲牙]",
+        "wx_code": "/::D",
+        "imageName": "Expression_14"
+    },
+    {
+        "name": "惊讶",
+        "zh_code": "[惊讶]",
+        "wx_code": "/::O",
+        "imageName": "Expression_15"
+    },
+    {
+        "name": "难过",
+        "zh_code": "[难过]",
+        "wx_code": "/::(",
+        "imageName": "Expression_16"
+    },
+    {
+        "name": "酷",
+        "zh_code": "[酷]",
+        "wx_code": "/::+",
+        "imageName": "Expression_17"
+    },
+    {
+        "name": "囧",
+        "zh_code": "[囧]",
+        "wx_code": "[Blush]",
+        "imageName": "Expression_18"
+    },
+    {
+        "name": "抓狂",
+        "zh_code": "[抓狂]",
+        "wx_code": "/::Q",
+        "imageName": "Expression_19"
+    },
+    {
+        "name": "吐",
+        "zh_code": "[吐]",
+        "wx_code": "/::T",
+        "imageName": "Expression_20"
+    },
+    {
+        "name": "偷笑",
+        "zh_code": "[偷笑]",
+        "wx_code": "/:,@P",
+        "imageName": "Expression_21"
+    },
+    {
+        "name": "愉快",
+        "zh_code": "[愉快]",
+        "wx_code": "/:,@-D",
+        "imageName": "Expression_22"
+    },
+    {
+        "name": "白眼",
+        "zh_code": "[白眼]",
+        "wx_code": "/::d",
+        "imageName": "Expression_23"
+    },
+    {
+        "name": "傲慢",
+        "zh_code": "[傲慢]",
+        "wx_code": "/:,@o",
+        "imageName": "Expression_24"
+    },
+    {
+        "name": "饥饿",
+        "zh_code": "[饥饿]",
+        "wx_code": "/::g",
+        "imageName": "Expression_25"
+    },
+    {
+        "name": "困",
+        "zh_code": "[困]",
+        "wx_code": "/:|-)",
+        "imageName": "Expression_26"
+    },
+    {
+        "name": "惊恐",
+        "zh_code": "[惊恐]",
+        "wx_code": "/::!",
+        "imageName": "Expression_27"
+    },
+    {
+        "name": "流汗",
+        "zh_code": "[流汗]",
+        "wx_code": "/::L",
+        "imageName": "Expression_28"
+    },
+    {
+        "name": "憨笑",
+        "zh_code": "[憨笑]",
+        "wx_code": "/::>",
+        "imageName": "Expression_29"
+    },
+    {
+        "name": "悠闲",
+        "zh_code": "[悠闲]",
+        "wx_code": "/::,@",
+        "imageName": "Expression_30"
+    },
+    {
+        "name": "奋斗",
+        "zh_code": "[奋斗]",
+        "wx_code": "/:,@f",
+        "imageName": "Expression_31"
+    },
+    {
+        "name": "咒骂",
+        "zh_code": "[咒骂]",
+        "wx_code": "/::-S",
+        "imageName": "Expression_32"
+    },
+    {
+        "name": "疑问",
+        "zh_code": "[疑问]",
+        "wx_code": "/:?",
+        "imageName": "Expression_33"
+    },
+    {
+        "name": "嘘",
+        "zh_code": "嘘",
+        "wx_code": "/:,@x",
+        "imageName": "Expression_34"
+    },
+    {
+        "name": "晕",
+        "zh_code": "[晕]",
+        "wx_code": "/:,@@",
+        "imageName": "Expression_35"
+    },
+    {
+        "name": "衰",
+        "zh_code": "[衰]",
+        "wx_code": "/:,@!",
+        "imageName": "Expression_37"
+    },
+    {
+        "name": "骷髅",
+        "zh_code": "[骷髅]",
+        "wx_code": "/:!!!",
+        "imageName": "Expression_38"
+    },
+    {
+        "name": "敲打",
+        "zh_code": "[敲打]",
+        "wx_code": "/:xx",
+        "imageName": "Expression_39"
+    },
+    {
+        "name": "再见",
+        "zh_code": "[再见]",
+        "wx_code": "[Bye]",
+        "imageName": "Expression_40"
+    },
+    {
+        "name": "擦汗",
+        "zh_code": "[擦汗]",
+        "wx_code": "/:wipe",
+        "imageName": "Expression_41"
+    },
+    {
+        "name": "抠鼻",
+        "zh_code": "[抠鼻]",
+        "wx_code": "/:dig",
+        "imageName": "Expression_42"
+    },
+    {
+        "name": "鼓掌",
+        "zh_code": "[鼓掌]",
+        "wx_code": "/:handclap",
+        "imageName": "Expression_43"
+    },
+    {
+        "name": "糗大了",
+        "zh_code": "[糗大了]",
+        "wx_code": "/:&-(",
+        "imageName": "Expression_44"
+    },
+    {
+        "name": "坏笑",
+        "zh_code": "[坏笑]",
+        "wx_code": "/:B-)",
+        "imageName": "Expression_45"
+    },
+    {
+        "name": "左哼哼",
+        "zh_code": "[左哼哼]",
+        "wx_code": "/:<@",
+        "imageName": "Expression_46"
+    },
+    {
+        "name": "右哼哼",
+        "zh_code": "[右哼哼]",
+        "wx_code": "/:@>",
+        "imageName": "Expression_47"
+    },
+    {
+        "name": "哈欠",
+        "zh_code": "[哈欠]",
+        "wx_code": "/::-O",
+        "imageName": "Expression_48"
+    },
+    {
+        "name": "鄙视",
+        "zh_code": "[鄙视]",
+        "wx_code": "/:>-|",
+        "imageName": "Expression_49"
+    },
+    {
+        "name": "委屈",
+        "zh_code": "[委屈]",
+        "wx_code": "/:P-(",
+        "imageName": "Expression_50"
+    },
+    {
+        "name": "快哭了",
+        "zh_code": "[快哭了]",
+        "wx_code": "/::'|",
+        "imageName": "Expression_51"
+    },
+    {
+        "name": "阴险",
+        "zh_code": "[阴险]",
+        "wx_code": "/:X-)",
+        "imageName": "Expression_52"
+    },
+    {
+        "name": "亲亲",
+        "zh_code": "[[亲亲]",
+        "wx_code": "/::*",
+        "imageName": "Expression_53"
+    },
+    {
+        "name": "吓",
+        "zh_code": "[吓]",
+        "wx_code": "/:@x",
+        "imageName": "Expression_54"
+    },
+    {
+        "name": "可怜",
+        "zh_code": "[]",
+        "wx_code": "/:8*",
+        "imageName": "Expression_55"
+    },
+    {
+        "name": "菜刀",
+        "zh_code": "[菜刀]",
+        "wx_code": "/:pd",
+        "imageName": "Expression_56"
+    },
+    {
+        "name": "西瓜",
+        "zh_code": "[西瓜]",
+        "wx_code": "/:<W>",
+        "imageName": "Expression_57"
+    },
+    {
+        "name": "啤酒",
+        "zh_code": "[啤酒]",
+        "wx_code": "/:beer",
+        "imageName": "Expression_58"
+    },
+    {
+        "name": "篮球",
+        "zh_code": "[篮球]",
+        "wx_code": "/:basketb",
+        "imageName": "Expression_59"
+    },
+    {
+        "name": "乒乓",
+        "zh_code": "[乒乓]",
+        "wx_code": "/:oo",
+        "imageName": "Expression_60"
+    },
+    {
+        "name": "咖啡",
+        "zh_code": "[咖啡]",
+        "wx_code": "/:coffee",
+        "imageName": "Expression_61"
+    },
+    {
+        "name": "饭",
+        "zh_code": "[饭]",
+        "wx_code": "/:eat",
+        "imageName": "Expression_62"
+    },
+    {
+        "name": "猪头",
+        "zh_code": "[猪头]",
+        "wx_code": "/:pig",
+        "imageName": "Expression_63"
+    },
+    {
+        "name": "玫瑰",
+        "zh_code": "[玫瑰]",
+        "wx_code": "/:rose",
+        "imageName": "Expression_64"
+    },
+    {
+        "name": "凋谢",
+        "zh_code": "[凋谢]",
+        "wx_code": "/:fade",
+        "imageName": "Expression_65"
+    },
+    {
+        "name": "嘴唇",
+        "zh_code": "[嘴唇]",
+        "wx_code": "/:showlove",
+        "imageName": "Expression_66"
+    },
+    {
+        "name": "爱心",
+        "zh_code": "[爱心]",
+        "wx_code": "/:heart",
+        "imageName": "Expression_67"
+    },
+    {
+        "name": "心碎",
+        "zh_code": "[心碎]",
+        "wx_code": "/:break",
+        "imageName": "Expression_68"
+    },
+    {
+        "name": "蛋糕",
+        "zh_code": "[蛋糕]",
+        "wx_code": "/:cake",
+        "imageName": "Expression_69"
+    },
+    {
+        "name": "闪电",
+        "zh_code": "[闪电]",
+        "wx_code": "/:li",
+        "imageName": "Expression_70"
+    },
+    {
+        "name": "炸弹",
+        "zh_code": "[炸弹]",
+        "wx_code": "/:bome",
+        "imageName": "Expression_71"
+    },
+    {
+        "name": "刀",
+        "zh_code": "[刀]",
+        "wx_code": "/:kn",
+        "imageName": "Expression_72"
+    },
+    {
+        "name": "足球",
+        "zh_code": "[足球]",
+        "wx_code": "/:footb",
+        "imageName": "Expression_73"
+    },
+    {
+        "name": "瓢虫",
+        "zh_code": "[瓢虫]",
+        "wx_code": "/:ladybug",
+        "imageName": "Expression_74"
+    },
+    {
+        "name": "便便",
+        "zh_code": "[便便]",
+        "wx_code": "/:shit",
+        "imageName": "Expression_75"
+    },
+    {
+        "name": "月亮",
+        "zh_code": "[月亮]",
+        "wx_code": "/:moon",
+        "imageName": "Expression_76"
+    },
+    {
+        "name": "太阳",
+        "zh_code": "[太阳]",
+        "wx_code": "/:sun",
+        "imageName": "Expression_77"
+    },
+    {
+        "name": "礼物",
+        "zh_code": "[礼物]",
+        "wx_code": "/:gift",
+        "imageName": "Expression_78"
+    },
+    {
+        "name": "拥抱",
+        "zh_code": "[拥抱]",
+        "wx_code": "/:hug",
+        "imageName": "Expression_79"
+    },
+    {
+        "name": "强",
+        "zh_code": "[强]",
+        "wx_code": "/:strong",
+        "imageName": "Expression_80"
+    },
+    {
+        "name": "弱",
+        "zh_code": "[弱]",
+        "wx_code": "/:weak",
+        "imageName": "Expression_81"
+    },
+    {
+        "name": "握手",
+        "zh_code": "[握手]",
+        "wx_code": "/:share",
+        "imageName": "Expression_82"
+    },
+    {
+        "name": "胜利",
+        "zh_code": "[胜利]",
+        "wx_code": "/:v",
+        "imageName": "Expression_83"
+    },
+    {
+        "name": "抱拳",
+        "zh_code": "[抱拳]",
+        "wx_code": "[Salute]",
+        "imageName": "Expression_84"
+    },
+    {
+        "name": "勾引",
+        "zh_code": "[勾引]",
+        "wx_code": "/:jj",
+        "imageName": "Expression_85"
+    },
+    {
+        "name": "拳头",
+        "zh_code": "[拳头]",
+        "wx_code": "/:@@",
+        "imageName": "Expression_86"
+    },
+    {
+        "name": "差劲",
+        "zh_code": "[差劲]",
+        "wx_code": "/:bad",
+        "imageName": "Expression_87"
+    },
+    {
+        "name": "爱你",
+        "zh_code": "[爱你]",
+        "wx_code": "/:lvu",
+        "imageName": "Expression_88"
+    },
+    {
+        "name": "NO",
+        "zh_code": "[NO]",
+        "wx_code": "/:no",
+        "imageName": "Expression_89"
+    },
+    {
+        "name": "OK",
+        "zh_code": "[OK]",
+        "wx_code": "/:ok",
+        "imageName": "Expression_90"
+    },
+    
+    {
+        "name": "爱情",
+        "zh_code": "[爱情]",
+        "wx_code": "/:love",
+        "imageName": "Expression_91"
+    },
+    {
+        "name": "飞吻",
+        "zh_code": "[飞吻]",
+        "wx_code": "/:<L>",
+        "imageName": "Expression_92"
+    },
+    {
+        "name": "跳跳",
+        "zh_code": "[跳跳]",
+        "wx_code": "/:jump",
+        "imageName": "Expression_93"
+    },
+    {
+        "name": "发抖",
+        "zh_code": "[发抖]",
+        "wx_code": "/:shake",
+        "imageName": "Expression_94"
+    },
+    {
+        "name": "怄火",
+        "zh_code": "[怄火]",
+        "wx_code": "/:<O>",
+        "imageName": "Expression_95"
+    },
+    {
+        "name": "转圈",
+        "zh_code": "[转圈]",
+        "wx_code": "/:circle",
+        "imageName": "Expression_96"
+    },
+    {
+        "name": "磕头",
+        "zh_code": "[磕头]",
+        "wx_code": "/:kotow",
+        "imageName": "Expression_97"
+    },
+    {
+        "name": "回头",
+        "zh_code": "[回头]",
+        "wx_code": "/:turn",
+        "imageName": "Expression_98"
+    },
+    {
+        "name": "跳绳",
+        "zh_code": "[跳绳]",
+        "wx_code": "/:skip",
+        "imageName": "Expression_99"
+    },
+    {
+        "name": "怄火",
+        "zh_code": "[怄火]",
+        "wx_code": "/:oY",
+        "imageName": "Expression_100"
+    },
+    {
+        "name": "激动",
+        "zh_code": "[激动]",
+        "wx_code": "/:#-0",
+        "imageName": "Expression_101"
+    },
+    {
+        "name": "乱舞",
+        "zh_code": "[乱舞]",
+        "wx_code": "/:hiphot",
+        "imageName": "Expression_102"
+    },
+    {
+        "name": "献吻",
+        "zh_code": "[献吻]",
+        "wx_code": "/:kiss",
+        "imageName": "Expression_103"
+    },
+    {
+        "name": "左太极",
+        "zh_code": "[左太极]",
+        "wx_code": "/:<&",
+        "imageName": "Expression_104"
+    },
+    {
+        "name": "右太极",
+        "zh_code": "[右太极]",
+        "wx_code": "/:&>",
+        "imageName": "Expression_105"
+    },
+    {
+        "name": "奸笑",
+        "zh_code": "[奸笑]",
+        "wx_code": "[Smirk]",
+        "imageName": "Expression_106"
+    },
+    {
+        "name": "嘿哈",
+        "zh_code": "[嘿哈]",
+        "wx_code": "[Hey]",
+        "imageName": "Expression_107"
+    },
+    {
+        "name": "捂脸",
+        "zh_code": "[捂脸]",
+        "wx_code": "[Facepalm]",
+        "imageName": "Expression_108"
+    },
+    {
+        "name": "机智",
+        "zh_code": "[机智]",
+        "wx_code": "[Smart]",
+        "imageName": "Expression_109"
+    },
+    {
+        "name": "茶",
+        "zh_code": "[茶]",
+        "wx_code": "[Tea]",
+        "imageName": "Expression_110"
+    },
+    {
+        "name": "红包",
+        "zh_code": "[红包]",
+        "wx_code": "[Packet]",
+        "imageName": "Expression_111"
+    },
+    {
+        "name": "蜡烛",
+        "zh_code": "[蜡烛]",
+        "wx_code": "[Candle]",
+        "imageName": "Expression_112"
+    },
+    {
+        "name": "耶",
+        "zh_code": "[耶]",
+        "wx_code": "[Yeah!]",
+        "imageName": "Expression_113"
+    },
+    {
+        "name": "皱眉",
+        "zh_code": "[皱眉]",
+        "wx_code": "[Concerned]",
+        "imageName": "Expression_114"
+    }
+]
