@@ -12,10 +12,25 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var copyAvaliable = UserDefaults.standard.bool(forKey: "CopyAvaliable")
-    var copyWxCode = UserDefaults.standard.bool(forKey: "CopyWxCode")
-    var showAlert = UserDefaults.standard.bool(forKey: "ShowAlert")
+    /// 点击是否可以复制
+    lazy var copyAvaliable: Bool = {
+        var copyAvaliable = UserDefaults.standard.bool(forKey: "CopyAvaliable")
+        return copyAvaliable
+    }()
     
+    /// 是否复制 字符编码？否 则复制中文编码
+    lazy var copyWxCode: Bool = {
+        var copyWxCode = UserDefaults.standard.bool(forKey: "CopyWxCode")
+        return copyWxCode
+    }()
+    
+    /// 是否弹出提示信息
+    lazy var showAlert: Bool = {
+        var showAlert = UserDefaults.standard.bool(forKey: "ShowAlert")
+        return showAlert
+    }()
+    
+    /// 数据源
     lazy var dataSource: [Model] = {
         let path = Bundle.main.path(forResource: "emoji_zh", ofType: "json")
         let data = try! Data.init(contentsOf: URL.init(fileURLWithPath: path!), options: Data.ReadingOptions.alwaysMapped)
@@ -31,16 +46,20 @@ class ViewController: UIViewController {
         return dataSource
     }()
     
+    /// 搜索结果
     var searchResults: [Model] = [Model]()
     
+    /// 搜索视图控制器
     lazy var searchC: UISearchController = {
         weak var weakSelf = self
         let searchC = UISearchController(searchResultsController: nil)
         searchC.searchResultsUpdater = self
         searchC.delegate = self
-        searchC.obscuresBackgroundDuringPresentation = false;
+        searchC.obscuresBackgroundDuringPresentation = true;
         searchC.searchBar.placeholder = "请输入你想搜索的表情关键词"
         searchC.searchBar.autocapitalizationType = .none
+        // 设定 搜索控制器 弹出时，导航栏不消失
+        searchC.hidesNavigationBarDuringPresentation = false
         return searchC
     }()
     
@@ -48,13 +67,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // 注册 cell
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        // 设定 预估大小，此处只有宽有s真是用途
         (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize.init(width: 65, height: 100)
-        
+        // 设定 搜索控制器
         navigationItem.searchController = searchC
-        navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
+        // 设定 搜索控制器滑动时隐藏
         navigationItem.hidesSearchBarWhenScrolling = true
-        
+        // 监听 用户配置信息变化
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: UserDefaults.standard, queue: OperationQueue.main) { (noti) in
             let center = noti.object as! UserDefaults
             self.copyWxCode = center.bool(forKey: "CopyWxCode")
@@ -73,6 +94,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 当 搜索控制器 活跃时 显示的是 搜索结果
         return searchC.isActive ? searchResults.count : dataSource.count
     }
     
@@ -86,11 +108,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let model = searchC.isActive ? searchResults[indexPath.item] : dataSource[indexPath.item]
+        // 决定是否 复制
         if copyAvaliable {
             UIPasteboard.general.string = copyWxCode ? model.wx_code : model.zh_code
         }
+        // 决定是否弹窗提示
         if showAlert {
             let alertC = UIAlertController(title: model.name, message: "中文编码\n" + model.zh_code + "\n\n" + "字符编码\n" + model.wx_code, preferredStyle: .alert)
             
@@ -115,6 +138,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 extension ViewController: UISearchControllerDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        // 搜索框 文字更新时 根据输入的文字 查询结果
         searchResults = dataSource.filter { return $0.name.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "") || $0.wx_code.contains(searchController.searchBar.text ?? "") }
         collectionView.reloadData()
     }
@@ -124,12 +148,15 @@ extension ViewController: UISearchControllerDelegate, UISearchResultsUpdating {
     }
 }
 
+/// 单元视图
 class CollectionViewCell: UICollectionViewCell {
+    /// 图片视图
     lazy var emojiImageView: UIImageView = {
         let emojiImageView = UIImageView()
         emojiImageView.translatesAutoresizingMaskIntoConstraints = false
         return emojiImageView
     }()
+    /// 中文描述文本
     lazy var emojiLabel: UILabel = {
         let emojiLabel = UILabel()
         emojiLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -137,6 +164,7 @@ class CollectionViewCell: UICollectionViewCell {
         emojiLabel.textAlignment = .center
         return emojiLabel
     }()
+    /// 字符描述文本
     lazy var emojiCodeLabel: UILabel = {
         let emojiCodeLabel = UILabel()
         emojiCodeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -149,7 +177,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        // 视图添加 约束添加
         contentView.addSubview(emojiImageView)
         contentView.addSubview(emojiLabel)
         contentView.addSubview(emojiCodeLabel)
@@ -178,6 +206,7 @@ class CollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// 点击效果
     override var isSelected: Bool {
         didSet {
             if isSelected {
@@ -190,6 +219,7 @@ class CollectionViewCell: UICollectionViewCell {
         }
     }
     
+    /// 自适应高度
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()
         layoutIfNeeded()
@@ -202,11 +232,19 @@ class CollectionViewCell: UICollectionViewCell {
     
 }
 
+/// 模型
 struct Model {
+    /// 表情名称
     var name: String
+    /// 表情的中文字符编码
     var zh_code: String
+    /// 表情的 字符编码
     var wx_code: String
+    /// 表情的图片名称
     var imageName: String
+    /// 初始化模型
+    ///
+    /// - Parameter data: json 数据
     init(data: [String: String]) {
         name = data["name"] ?? "";
         zh_code = data["zh_code"] ?? "";
@@ -215,20 +253,25 @@ struct Model {
     }
 }
 
+/// 设置页
 class SettingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    /// 是否可以点击复制
     var copyAvaliable = UserDefaults.standard.bool(forKey: "CopyAvaliable") {
         didSet {
+            // 赋新值时存储并同步
             UserDefaults.standard.set(copyAvaliable, forKey: "CopyAvaliable")
             UserDefaults.standard.synchronize()
         }
     }
+    /// 是否复制 字符编码？否 则复制中文编码
     var copyWxCode = UserDefaults.standard.bool(forKey: "CopyWxCode") {
         didSet {
             UserDefaults.standard.set(copyWxCode, forKey: "CopyWxCode")
             UserDefaults.standard.synchronize()
         }
     }
+    /// 是否弹出提示信息
     var showAlert = UserDefaults.standard.bool(forKey: "ShowAlert") {
         didSet {
             UserDefaults.standard.set(showAlert, forKey: "ShowAlert")

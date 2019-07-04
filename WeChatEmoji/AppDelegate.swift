@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.object(forKey: "CopyAvaliable") == nil {
             UserDefaults.standard.set(true, forKey: "CopyAvaliable")
             UserDefaults.standard.set(true, forKey: "ShowAlert")
+            UserDefaults.standard.synchronize()
         }
         
         return true
