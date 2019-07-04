@@ -139,7 +139,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 extension ViewController: UISearchControllerDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         // 搜索框 文字更新时 根据输入的文字 查询结果
-        searchResults = dataSource.filter { return $0.name.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "") || $0.wx_code.contains(searchController.searchBar.text ?? "") }
+        searchResults = dataSource.filter { return $0.name.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "") || $0.wx_code.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "") || $0.zh_code.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "") }
         collectionView.reloadData()
     }
     
