@@ -85,6 +85,19 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SettingPopover" {
+            let popoverVC = segue.destination
+            popoverVC.popoverPresentationController?.delegate = self
+        }
+    }
+    
+}
+
+extension ViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -276,6 +289,10 @@ class SettingViewController: UIViewController {
         didSet {
             UserDefaults.standard.set(showAlert, forKey: "ShowAlert")
             UserDefaults.standard.synchronize()
+        }
+    }
+    @IBAction func doneAction(_ sender: Any) {
+        dismiss(animated: true) {
         }
     }
     
