@@ -75,6 +75,9 @@ class ViewController: UIViewController {
         navigationItem.searchController = searchC
         // 设定 搜索控制器滑动时隐藏
         navigationItem.hidesSearchBarWhenScrolling = true
+        // 设置 导航栏大标题
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
         // 监听 用户配置信息变化
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: UserDefaults.standard, queue: OperationQueue.main) { (noti) in
             let center = noti.object as! UserDefaults
@@ -92,6 +95,10 @@ class ViewController: UIViewController {
         }
     }
     
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
+        return false
+    }
 }
 
 extension ViewController: UIPopoverPresentationControllerDelegate {
