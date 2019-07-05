@@ -10,7 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+//    @IBOutlet weak var collectionView: UICollectionView!
+    lazy var collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: 65, height: 100)
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.delegate = self
+        view.dataSource = self
+        view.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
+        return view
+    }()
     
     /// 点击是否可以复制
     lazy var copyAvaliable: Bool = {
@@ -55,7 +67,7 @@ class ViewController: UIViewController {
         let searchC = UISearchController(searchResultsController: nil)
         searchC.searchResultsUpdater = self
         searchC.delegate = self
-        searchC.obscuresBackgroundDuringPresentation = true;
+        searchC.obscuresBackgroundDuringPresentation = false;
         searchC.searchBar.placeholder = "请输入你想搜索的表情关键词"
         searchC.searchBar.autocapitalizationType = .none
         // 设定 搜索控制器 弹出时，导航栏不消失
@@ -67,10 +79,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // 注册 cell
-        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        // 设定 预估大小，此处只有宽有s真是用途
-        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize.init(width: 65, height: 100)
+//        // 注册 cell
+//        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+//        // 设定 预估大小，此处只有宽有真是用途
+//        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize.init(width: 65, height: 100)
+        
+        view.addSubview(collectionView)
+        
+        let views = ["collectionView": collectionView]
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[collectionView]-0-|", options: [], metrics: [:], views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[collectionView]-0-|", options: [], metrics: [:], views: views))
+        
+        title = "微信表情"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: .done, target: self, action: #selector(settingBBIAction))
+        
         // 设定 搜索控制器
         navigationItem.searchController = searchC
         // 设定 搜索控制器滑动时隐藏
@@ -88,13 +111,55 @@ class ViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SettingPopover" {
-            let popoverVC = segue.destination
-            popoverVC.popoverPresentationController?.delegate = self
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SettingPopover" {
+//            let popoverVC = segue.destination
+//            popoverVC.popoverPresentationController?.delegate = self
+//        }
+//    }
+    
+    /// MARK: Actions
+    @objc func settingBBIAction() {
+        let settingVC = SettingViewController()
+        /**
+        let nav = UINavigationController(rootViewController: settingVC)
+        nav.modalPresentationStyle = .popover
+        nav.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        nav.preferredContentSize = CGSize(width: view.frame.size.width*0.66, height: view.frame.size.height*0.66)
+        nav.isModalInPopover = true
+        nav.popoverPresentationController?.delegate = self
+        
+        let vc = searchC.isActive ? searchC : navigationController
+        
+        vc?.present(nav, animated: true, completion: nil)
+         */
+        
+//        let nav = UINavigationController(rootViewController: settingVC)
+        settingVC.modalPresentationStyle = .popover
+        settingVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        settingVC.preferredContentSize = CGSize(width: view.frame.size.width*0.66, height: view.frame.size.height*0.66)
+        settingVC.isModalInPopover = true
+        settingVC.popoverPresentationController?.delegate = self
+        settingVC.popoverPresentationController?.passthroughViews = [view]
+        
+        let vc = searchC.isActive ? searchC : navigationController
+        
+        vc?.present(settingVC, animated: true, completion: {
+            self.collectionView.isUserInteractionEnabled = false
+        })
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        if collectionView.isUserInteractionEnabled == false {
+            let vc = searchC.isActive ? searchC : navigationController
+            vc?.presentedViewController?.dismiss(animated: true, completion: {
+                self.collectionView.isUserInteractionEnabled = true
+            })
         }
     }
     
+    /// MARK: UIScrollViewDelegate
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         scrollView.setContentOffset(CGPoint.zero, animated: true)
         return false
@@ -147,7 +212,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 collectionView.deselectItem(at: indexPath, animated: true);
             }
             alertC.addAction(cancelAction)
-            present(alertC, animated: true) {
+            if searchC.isActive {
+                searchC.present(alertC, animated: true) {
+                }
+            } else {
+                present(alertC, animated: true) {
+                }
             }
         } else {
             collectionView.deselectItem(at: indexPath, animated: true);
@@ -211,13 +281,13 @@ class CollectionViewCell: UICollectionViewCell {
         let vc = NSLayoutConstraint.constraints(withVisualFormat: "V:[iv]-5-[label]", options: [], metrics: [:], views: views)
         contentView.addConstraints(vc)
         
-        let hc = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|", options: [], metrics: [:], views: views)
+        let hc = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[label]-0-|", options: [], metrics: [:], views: views)
         contentView.addConstraints(hc)
         
         let vc1 = NSLayoutConstraint.constraints(withVisualFormat: "V:[label]-5-[codeLabel]-5-|", options: [], metrics: [:], views: views)
         contentView.addConstraints(vc1)
         
-        let hc1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[codeLabel]-|", options: [], metrics: [:], views: views)
+        let hc1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[codeLabel]-0-|", options: [], metrics: [:], views: views)
         contentView.addConstraints(hc1)
         
     }
@@ -275,7 +345,16 @@ struct Model {
 
 /// 设置页
 class SettingViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
+    lazy var tableView: UITableView = {
+        let view = UITableView(frame: CGRect.zero, style: .grouped)
+        view.delegate = self
+        view.dataSource = self
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     /// 是否可以点击复制
     var copyAvaliable = UserDefaults.standard.bool(forKey: "CopyAvaliable") {
         didSet {
@@ -298,9 +377,23 @@ class SettingViewController: UIViewController {
             UserDefaults.standard.synchronize()
         }
     }
-    @IBAction func doneAction(_ sender: Any) {
+    
+    @objc func doneAction(_ sender: Any) {
         dismiss(animated: true) {
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(tableView)
+        let views = ["tableView": tableView]
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[tableView]-0-|", options: [], metrics: [:], views: views))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[tableView]-0-|", options: [], metrics: [:], views: views))
+        
+//        title = "设置"
+//        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(doneAction(_:)))
     }
     
 }

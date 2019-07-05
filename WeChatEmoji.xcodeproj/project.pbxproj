@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DC03B5922CCB28E00ED47D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B5822CCB28E00ED47D9 /* AppDelegate.swift */; };
 		1DC03B5B22CCB28E00ED47D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B5A22CCB28E00ED47D9 /* ViewController.swift */; };
-		1DC03B5E22CCB28E00ED47D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC03B5C22CCB28E00ED47D9 /* Main.storyboard */; };
 		1DC03B6022CCB29100ED47D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC03B5F22CCB29100ED47D9 /* Assets.xcassets */; };
 		1DC03B6322CCB29100ED47D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC03B6122CCB29100ED47D9 /* LaunchScreen.storyboard */; };
 		1DC03B7122CCF98500ED47D9 /* emoji_zh.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DC03B7022CCF98500ED47D9 /* emoji_zh.json */; };
@@ -19,7 +18,6 @@
 		1DC03B5522CCB28E00ED47D9 /* WeChatEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC03B5822CCB28E00ED47D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DC03B5A22CCB28E00ED47D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1DC03B5D22CCB28E00ED47D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DC03B5F22CCB29100ED47D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DC03B6222CCB29100ED47D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DC03B6422CCB29100ED47D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				1DC03B7022CCF98500ED47D9 /* emoji_zh.json */,
 				1DC03B5822CCB28E00ED47D9 /* AppDelegate.swift */,
 				1DC03B5A22CCB28E00ED47D9 /* ViewController.swift */,
-				1DC03B5C22CCB28E00ED47D9 /* Main.storyboard */,
 				1DC03B5F22CCB29100ED47D9 /* Assets.xcassets */,
 				1DC03B6122CCB29100ED47D9 /* LaunchScreen.storyboard */,
 				1DC03B6422CCB29100ED47D9 /* Info.plist */,
@@ -128,7 +125,6 @@
 				1DC03B6322CCB29100ED47D9 /* LaunchScreen.storyboard in Resources */,
 				1DC03B6022CCB29100ED47D9 /* Assets.xcassets in Resources */,
 				1DC03B7122CCF98500ED47D9 /* emoji_zh.json in Resources */,
-				1DC03B5E22CCB28E00ED47D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1DC03B5C22CCB28E00ED47D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1DC03B5D22CCB28E00ED47D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1DC03B6122CCB29100ED47D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
