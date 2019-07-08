@@ -6,4 +6,4 @@ Web Demo
 
 App Demo
 ---
-![Demo Image](./demo.png)
+ <img src="./demo.png" width = "50%" height = "50%" alt="Demo Image" align=center />
