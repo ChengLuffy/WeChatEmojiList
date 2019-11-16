@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         return view
@@ -300,10 +300,10 @@ class CollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                self.contentView.backgroundColor = UIColor.groupTableViewBackground
+                self.contentView.backgroundColor = UIColor.systemGray
             } else {
                 UIView.animate(withDuration: 2) {
-                    self.contentView.backgroundColor = UIColor.white
+                    self.contentView.backgroundColor = UIColor.systemBackground
                 }
             }
         }

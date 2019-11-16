@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D99F20E237FC9CF00C4CBC9 /* WeChatEmoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeChatEmoji.entitlements; sourceTree = "<group>"; };
 		1DC03B5522CCB28E00ED47D9 /* WeChatEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC03B5822CCB28E00ED47D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DC03B5A22CCB28E00ED47D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		1DC03B5722CCB28E00ED47D9 /* WeChatEmoji */ = {
 			isa = PBXGroup;
 			children = (
+				1D99F20E237FC9CF00C4CBC9 /* WeChatEmoji.entitlements */,
 				1DC03B7022CCF98500ED47D9 /* emoji_zh.json */,
 				1DC03B5822CCB28E00ED47D9 /* AppDelegate.swift */,
 				1DC03B5A22CCB28E00ED47D9 /* ViewController.swift */,
@@ -274,15 +276,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeChatEmoji/WeChatEmoji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = C5WAW7Z979;
 				INFOPLIST_FILE = WeChatEmoji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.chengluffy.WeChatEmoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -292,15 +298,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WeChatEmoji/WeChatEmoji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = C5WAW7Z979;
 				INFOPLIST_FILE = WeChatEmoji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.chengluffy.WeChatEmoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
